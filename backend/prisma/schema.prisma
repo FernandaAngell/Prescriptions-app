@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+enum Role {
+  DOCTOR
+  PATIENT
+  ADMIN
+}
+
+enum PrescriptionStatus {
+  pending
+  consumed
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role
+  createdAt DateTime @default(now())
+
+  authoredPrescriptions Prescription[] @relation("AuthoredBy")
+  patientPrescriptions  Prescription[] @relation("PatientPrescriptions")
+}
+
+model Prescription {
+  id         String             @id @default(cuid())
+  code       String             @unique
+  status     PrescriptionStatus @default(pending)
+  notes      String?
+  createdAt  DateTime           @default(now())
+  consumedAt DateTime?
+
+  patientId String
+  patient   User @relation("PatientPrescriptions", fields: [patientId], references: [id])
+
+  authorId String
+  author   User @relation("AuthoredBy", fields: [authorId], references: [id])
+
+  items PrescriptionItem[]
+
+  @@index([status])
+  @@index([createdAt])
+  @@index([patientId])
+  @@index([authorId])
+}
+
+model PrescriptionItem {
+  id             String       @id @default(cuid())
+  prescriptionId String
+  prescription   Prescription @relation(fields: [prescriptionId], references: [id])
+
+  name         String
+  dosage       String?
+  quantity     Int?
+  instructions String?
+}
