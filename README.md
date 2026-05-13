@@ -68,3 +68,86 @@ Feedback visual moderno para acciones del sistema.
 ```bash
 backend/
 frontend/
+```
+
+---
+
+# 🚀 Instalación
+
+## Clonar repositorio
+
+```bash
+git clone https://github.com/FernandaAngell/Prescriptions-app.git
+```
+
+---
+
+# Backend
+
+```bash
+cd backend
+npm install
+npm run start:dev
+```
+
+---
+
+# Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# 🔑 Cuentas de prueba
+
+## 👨‍⚕️ Doctor
+
+Email:
+
+```txt
+doctor@test.com
+```
+
+Password:
+
+```txt
+123456
+```
+
+---
+
+## 🧑‍🦱 Patient
+
+Email:
+
+```txt
+patient@test.com
+```
+
+Password:
+
+```txt
+123456
+```
+
+---
+
+# 🎯 Objetivo
+
+Fortalecer habilidades en desarrollo full stack mediante la construcción de una aplicación moderna con autenticación, roles, base de datos relacional y comunicación frontend/backend.
+
+---
+
+# 👩‍💻 Autor
+
+Maria Fernanda Tolosa Angel ✨
+
+---
+
+# 💡 Notas
+
+Este proyecto hace parte de mi proceso de aprendizaje y crecimiento como desarrolladora de software 🚀
