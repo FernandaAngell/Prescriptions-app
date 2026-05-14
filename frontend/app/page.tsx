@@ -202,6 +202,7 @@ export default function Home() {
 
           body: JSON.stringify({
             patientId,
+            authorId: localStorage.getItem('userId'),
 
             
   items: [
