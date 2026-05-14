@@ -60,7 +60,7 @@ export default function Home() {
     const storedUser =
       localStorage.getItem('user');
 
-    if (!storedUser) return;
+   if (!storedUser) return;
 
 const parsedUser = JSON.parse(storedUser);
 
