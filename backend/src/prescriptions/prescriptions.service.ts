@@ -49,7 +49,7 @@ export class PrescriptionsService {
   if (user.role === 'PATIENT') {
     return this.prisma.prescription.findMany({
       where: {
-        patientId: user.id,
+        patientId: user.sub,
       },
 
       include: {
