@@ -60,14 +60,13 @@ export default function Home() {
     const storedUser =
       localStorage.getItem('user');
 
-    if (storedUser) {
-      const parsedUser =
-        JSON.parse(storedUser);
+    if (!storedUser) return;
 
-      setUser(parsedUser);
+const parsedUser = JSON.parse(storedUser);
 
-      loadData(parsedUser);
-    }
+setUser(parsedUser);
+
+loadData(parsedUser);
   }, []);
 
   async function loadData(currentUser: any) {
