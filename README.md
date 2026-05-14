@@ -1,47 +1,52 @@
-# 🏥 MediCare - Prescription Management System
+# 🏥 MediCare - Sistema de Gestión de Prescripciones Médicas
 
-📚 Descripción
+## 📚 Descripción
 
-MediCare es una aplicación full stack para la gestión de prescripciones médicas desarrollada con NestJS, Prisma, PostgreSQL, Next.js y TailwindCSS.
+MediCare es una aplicación web full stack para la gestión de prescripciones médicas, desarrollada con tecnologías modernas como NestJS, Prisma, PostgreSQL, Next.js y TailwindCSS.
 
-El sistema permite administrar recetas médicas mediante autenticación segura y control de acceso por roles.
+El sistema permite administrar recetas médicas de forma segura mediante autenticación JWT y control de acceso basado en roles.
 
 ---
 
 # ✨ Funcionalidades
 
-🔐 Autenticación JWT  
+## 🔐 Autenticación JWT
 Sistema de login seguro con generación y validación de tokens.
 
-👨‍⚕️ Roles y permisos  
-Control de acceso para:
+## 👨‍⚕️ Roles y permisos
+La plataforma cuenta con diferentes tipos de usuarios:
+
 - Admin
 - Doctor
 - Patient
 
-📄 Prescriptions  
-Creación y gestión de recetas médicas.
+## 📄 Gestión de prescripciones
+Los doctores pueden crear y administrar recetas médicas para los pacientes.
 
-💊 Medicines  
-Registro de medicamentos, dosis e instrucciones.
+## 💊 Registro de medicamentos
+Cada prescripción incluye:
+- Nombre del medicamento
+- Dosis
+- Cantidad
+- Instrucciones
 
-✅ Consume Prescription  
-Los pacientes pueden marcar recetas como consumidas.
+## ✅ Consumo de prescripciones
+Los pacientes pueden marcar las recetas como consumidas.
 
-📊 Dashboard Admin  
-Visualización de métricas:
-- Usuarios
+## 📊 Dashboard Administrador
+El administrador puede visualizar métricas del sistema como:
+- Total de usuarios
 - Doctores
 - Pacientes
 - Prescripciones
-- Consumed
-- Pending
+- Prescripciones consumidas
+- Prescripciones pendientes
 
-🎨 UI Moderna  
-Interfaz moderna y responsive con TailwindCSS.
+## 🎨 Interfaz moderna
+Diseño responsive y moderno utilizando TailwindCSS.
 
-🔔 Toast Notifications  
-Feedback visual moderno para acciones del sistema.
+## 🔔 Notificaciones visuales
+Sistema de notificaciones modernas mediante React Hot Toast.
 
 ---
 
@@ -82,7 +87,7 @@ git clone https://github.com/FernandaAngell/Prescriptions-app.git
 
 ---
 
-# Backend
+# Configuración Backend
 
 ```bash
 cd backend
@@ -92,7 +97,7 @@ npm run start:dev
 
 ---
 
-# Frontend
+# Configuración Frontend
 
 ```bash
 cd frontend
@@ -109,7 +114,7 @@ npm run dev
 Email:
 
 ```txt
-doctor@test.com
+doctor@medicare.com
 ```
 
 Password:
@@ -120,12 +125,12 @@ Password:
 
 ---
 
-## 🧑‍🦱 Patient
+## 👩 Paciente
 
 Email:
 
 ```txt
-patient@test.com
+maria@patient.com
 ```
 
 Password:
@@ -133,12 +138,54 @@ Password:
 ```txt
 123456
 ```
+
+---
+
+## 👨 Paciente
+
+Email:
+
+```txt
+juan@patient.com
+```
+
+Password:
+
+```txt
+123456
+```
+
+---
+
+## 👑 Administrador
+
+Email:
+
+```txt
+admin@medicare.com
+```
+
+Password:
+
+```txt
+123456
+```
+
+---
+
+# 🌐 Deploy
+
+## Frontend
+Desplegado en Vercel.
+
+## Backend
+Desplegado en Railway.
 
 ---
 
 # 🎯 Objetivo
 
-Fortalecer habilidades en desarrollo full stack mediante la construcción de una aplicación moderna con autenticación, roles, base de datos relacional y comunicación frontend/backend.
+Este proyecto fue desarrollado con el objetivo de fortalecer habilidades en desarrollo full stack mediante la construcción de una aplicación moderna con autenticación, manejo de roles, bases de datos relacionales y comunicación entre frontend y backend.
 
 ---
 
