@@ -8,6 +8,7 @@ import {
   Param,
 } from '@nestjs/common';
 
+import { Req } from '@nestjs/common';
 import { PrescriptionsService } from './prescriptions.service';
 import { CreatePrescriptionDto } from './dto/create-prescription.dto';
 
@@ -29,10 +30,11 @@ export class PrescriptionsController {
   }
 
   @Get()
-  @Roles('DOCTOR', 'PATIENT', 'ADMIN')
-  getAll() {
-    return this.prescriptionsService.getPrescriptions();
-  }
+getPrescriptions(@Req() req) {
+  return this.prescriptionsService.getPrescriptions(
+    req.user,
+  );
+}
 
   @Patch(':id/consume')
   @Roles('PATIENT')

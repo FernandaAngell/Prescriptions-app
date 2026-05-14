@@ -45,8 +45,13 @@ export class PrescriptionsService {
     });
   }
 
-  async getPrescriptions() {
+  async getPrescriptions(user: any) {
+  if (user.role === 'PATIENT') {
     return this.prisma.prescription.findMany({
+      where: {
+        patientId: user.id,
+      },
+
       include: {
         items: true,
 
@@ -72,6 +77,33 @@ export class PrescriptionsService {
       },
     });
   }
+
+  return this.prisma.prescription.findMany({
+    include: {
+      items: true,
+
+      patient: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          createdAt: true,
+        },
+      },
+
+      author: {
+        select: {
+          id: true,
+          name: true,
+          email: true,
+          role: true,
+          createdAt: true,
+        },
+      },
+    },
+  });
+}
 
   async consumePrescription(id: string) {
     return this.prisma.prescription.update({
