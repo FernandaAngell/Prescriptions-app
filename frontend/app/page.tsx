@@ -629,9 +629,9 @@ loadData(parsedUser);
                       </div>
 
                       <div className="space-y-4">
-                        {prescription.medicines?.map(
+                        {prescription.items?.map(
                           (
-                            medicine: any,
+                             item: any,
                             index: number,
                           ) => (
                             <div
@@ -640,26 +640,26 @@ loadData(parsedUser);
                             >
                               <p className="font-bold text-slate-800">
                                 {
-                                  medicine.name
+                                  item.name
                                 }
                               </p>
 
                               <p className="text-slate-600">
                                 {
-                                  medicine.dosage
+                                  item.dosage
                                 }
                               </p>
 
                               <p className="text-slate-600">
                                 Quantity:{' '}
                                 {
-                                  medicine.quantity
+                                  item.quantity
                                 }
                               </p>
 
                               <p className="text-slate-600">
                                 {
-                                  medicine.instructions
+                                  item.instructions
                                 }
                               </p>
                             </div>
