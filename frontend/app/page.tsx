@@ -77,7 +77,7 @@ export default function Home() {
     if (currentUser.role === 'ADMIN') {
       const responseMetrics =
         await fetch(
-          'http://localhost:3000/admin/metrics',
+          'https://prescriptions-app-production.up.railway.app/admin/metrics',
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -93,7 +93,7 @@ export default function Home() {
 
     const responsePrescriptions =
       await fetch(
-        'http://localhost:3000/prescriptions',
+        'https://prescriptions-app-production.up.railway.app/prescriptions',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -110,7 +110,7 @@ export default function Home() {
 
     const responsePatients =
       await fetch(
-        'http://localhost:3000/users',
+        'https://prescriptions-app-production.up.railway.app/users',
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -135,7 +135,7 @@ export default function Home() {
       setLoading(true);
 
       const response = await fetch(
-        'http://localhost:3000/auth/login',
+        'https://prescriptions-app-production.up.railway.app/auth/login',
         {
           method: 'POST',
 
@@ -191,7 +191,7 @@ export default function Home() {
         localStorage.getItem('token');
 
       await fetch(
-        'http://localhost:3000/prescriptions',
+        'https://prescriptions-app-production.up.railway.app/prescriptions',
         {
           method: 'POST',
 
@@ -252,7 +252,7 @@ export default function Home() {
         localStorage.getItem('token');
 
       await fetch(
-        `http://localhost:3000/prescriptions/${id}/consume`,
+        `https://prescriptions-app-production.up.railway.app/prescriptions/${id}/consume`,
         {
           method: 'PATCH',
 
