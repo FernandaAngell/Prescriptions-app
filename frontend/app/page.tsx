@@ -206,12 +206,12 @@ export default function Home() {
             
   items: [
     {
-      medicine,
-      dosage,
-      quantity: Number(quantity),
-      instructions,
-    },
-  ],
+    name: medicine,
+    dosage,
+    quantity: Number(quantity),
+    instructions,
+  },
+],
 
             notes,
           }),
