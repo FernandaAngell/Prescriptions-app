@@ -160,7 +160,9 @@ export default function Home() {
       localStorage.setItem(
         'token',
         data.access_token,
+    
       );
+      localStorage.setItem('userId', data.user.id)
 
       localStorage.setItem(
         'user',
