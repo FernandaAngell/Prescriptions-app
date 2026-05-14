@@ -203,15 +203,15 @@ export default function Home() {
           body: JSON.stringify({
             patientId,
 
-            medicines: [
-              {
-                name: medicine,
-                dosage,
-                quantity:
-                  Number(quantity),
-                instructions,
-              },
-            ],
+            
+  items: [
+    {
+      medicine,
+      dosage,
+      quantity: Number(quantity),
+      instructions,
+    },
+  ],
 
             notes,
           }),
