@@ -118,7 +118,7 @@ export default function Home() {
         },
       );
 
-    const patientsData =
+      const patientsData =
       await responsePatients.json();
 
     const onlyPatients =
@@ -286,21 +286,20 @@ export default function Home() {
       <>
         <Toaster position="top-right" />
 
-        <main className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 flex items-center justify-center p-6">
-          <div className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md">
-            <h1 className="text-4xl font-bold text-slate-800 text-center mb-2">
+        <main className="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+          <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-sm border border-slate-200">
+            <h1 className="text-5xl font-bold text-slate-800 text-center mb-2">
               MediCare
             </h1>
 
-            <p className="text-slate-500 text-center mb-8">
-              Prescription Management
-              System
+            <p className="text-slate-500 text-center mb-8 text-base">
+              Prescription Management System
             </p>
 
             <input
               type="email"
               placeholder="Email"
-              className="w-full p-4 rounded-xl border border-slate-300 mb-4 outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 rounded-xl border border-slate-300 mb-4 outline-none text-slate-700 placeholder:text-slate-400 bg-white focus:ring-2 focus:ring-blue-400"
               value={email}
               onChange={(e) =>
                 setEmail(
@@ -312,7 +311,7 @@ export default function Home() {
             <input
               type="password"
               placeholder="Password"
-              className="w-full p-4 rounded-xl border border-slate-300 mb-6 outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full p-3 rounded-xl border border-slate-300 mb-6 outline-none text-slate-700 placeholder:text-slate-400 bg-white focus:ring-2 focus:ring-blue-400"
               value={password}
               onChange={(e) =>
                 setPassword(
@@ -324,7 +323,7 @@ export default function Home() {
             <button
               onClick={handleLogin}
               disabled={loading}
-              className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white p-4 rounded-xl font-semibold disabled:opacity-50"
+              className="w-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 text-white p-3 rounded-xl font-semibold"
             >
               {loading
                 ? 'Loading...'
@@ -342,46 +341,46 @@ export default function Home() {
 
       <main className="min-h-screen bg-slate-100 flex">
         {/* SIDEBAR */}
-        <aside className="w-64 bg-slate-900 text-white p-6 flex flex-col shadow-2xl">
-          <h1 className="text-3xl font-bold mb-10 tracking-wide">
+        <aside className="w-64 bg-[#0f172a] text-white p-6 flex flex-col shadow-xl">
+          <h1 className="text-4xl font-bold mb-10">
             MediCare
           </h1>
 
           <nav className="space-y-4">
-            <div className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-all p-4 rounded-xl cursor-pointer">
+            <div className="flex items-center gap-3 bg-white/10 hover:bg-white/20 transition-all p-4 rounded-2xl cursor-pointer">
               <LayoutDashboard />
-              <span className="text-lg font-medium">
+              <span className="text-lg">
                 Dashboard
               </span>
             </div>
 
-            <div className="flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all p-4 rounded-xl cursor-pointer">
+            <div className="flex items-center gap-3 bg-white/5 hover:bg-white/10 transition-all p-4 rounded-2xl cursor-pointer">
               <FileText />
-              <span className="text-lg font-medium">
+              <span className="text-lg">
                 Prescriptions
               </span>
             </div>
 
             <button
               onClick={handleLogout}
-              className="flex items-center gap-3 bg-red-500 hover:bg-red-600 transition-all p-4 rounded-xl w-full mt-8"
+              className="flex items-center gap-3 bg-red-500 hover:bg-red-600 transition-all p-4 rounded-2xl w-full mt-8"
             >
               <LogOut />
-              <span className="text-lg font-medium">
+              <span className="text-lg">
                 Logout
               </span>
             </button>
           </nav>
 
-          <div className="mt-auto pt-10 text-center text-xs text-slate-400">
+          <div className="mt-auto text-xs text-slate-400 pt-10">
             Built by Maria Fernanda
           </div>
         </aside>
 
         {/* CONTENT */}
-        <section className="flex-1 p-8 max-w-7xl mx-auto w-full">
+        <section className="flex-1 p-8">
           <div className="mb-10">
-            <h1 className="text-5xl font-bold text-slate-800 leading-tight">
+            <h1 className="text-6xl font-bold text-slate-800">
               Welcome back,
               <span className="text-blue-600">
                 {' '}
@@ -390,7 +389,7 @@ export default function Home() {
               👋
             </h1>
 
-            <p className="text-xl text-slate-500 mt-2">
+            <p className="text-2xl text-slate-500 mt-2">
               {user.role} Dashboard
             </p>
           </div>
@@ -399,60 +398,60 @@ export default function Home() {
           {user.role === 'ADMIN' &&
             metrics && (
               <div className="grid md:grid-cols-3 gap-5 mb-10">
-                <div className="bg-gradient-to-r from-indigo-500 to-violet-500 p-6 rounded-2xl text-white shadow-lg hover:scale-105 transition-all">
-                  <User size={36} />
+                <div className="bg-gradient-to-r from-violet-500 to-fuchsia-500 p-6 rounded-3xl text-white shadow-lg">
+                  <User size={35} />
 
-                  <h2 className="text-4xl font-bold mt-3">
+                  <h2 className="text-5xl font-bold mt-4">
                     {
                       metrics.totalUsers
                     }
                   </h2>
 
-                  <p className="text-base mt-1 opacity-90">
+                  <p className="mt-2 text-lg">
                     Total Users
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-sky-500 to-cyan-400 p-6 rounded-2xl text-white shadow-lg hover:scale-105 transition-all">
-                  <Shield size={36} />
+                <div className="bg-gradient-to-r from-sky-500 to-cyan-400 p-6 rounded-3xl text-white shadow-lg">
+                  <Shield size={35} />
 
-                  <h2 className="text-4xl font-bold mt-3">
+                  <h2 className="text-5xl font-bold mt-4">
                     {
                       metrics.totalDoctors
                     }
                   </h2>
 
-                  <p className="text-base mt-1 opacity-90">
+                  <p className="mt-2 text-lg">
                     Doctors
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-r from-emerald-500 to-green-400 p-6 rounded-2xl text-white shadow-lg hover:scale-105 transition-all">
-                  <Activity size={36} />
+                <div className="bg-gradient-to-r from-emerald-500 to-green-400 p-6 rounded-3xl text-white shadow-lg">
+                  <Activity size={35} />
 
-                  <h2 className="text-4xl font-bold mt-3">
+                  <h2 className="text-5xl font-bold mt-4">
                     {
                       metrics.totalPrescriptions
                     }
                   </h2>
 
-                  <p className="text-base mt-1 opacity-90">
+                  <p className="mt-2 text-lg">
                     Prescriptions
                   </p>
                 </div>
               </div>
             )}
 
-          {/* CREATE */}
+          {/* CREATE PRESCRIPTION */}
           {user.role === 'DOCTOR' && (
-            <div className="bg-white p-8 rounded-2xl shadow-lg mb-10 border border-slate-200">
-              <h2 className="text-3xl font-bold mb-6 text-slate-800">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200 mb-10">
+              <h2 className="text-4xl font-bold text-slate-800 mb-8">
                 Create Prescription
               </h2>
 
-              <div className="grid md:grid-cols-2 gap-4">
+              <div className="grid md:grid-cols-2 gap-5">
                 <select
-                  className="border border-slate-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border border-slate-300 p-3 rounded-xl outline-none bg-white text-slate-700 focus:ring-2 focus:ring-blue-400"
                   value={patientId}
                   onChange={(e) =>
                     setPatientId(
@@ -483,7 +482,7 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Medicine"
-                  className="border border-slate-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border-2 border-slate-300 p-3 rounded-xl outline-none bg-slate-50 text-slate-800 focus:border-blue-500 focus:bg-white transition-all"
                   value={medicine}
                   onChange={(e) =>
                     setMedicine(
@@ -495,7 +494,7 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Dosage"
-                  className="border border-slate-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                 className="border-2 border-slate-300 p-3 rounded-xl outline-none bg-slate-50 text-slate-800 focus:border-blue-500 focus:bg-white transition-all"
                   value={dosage}
                   onChange={(e) =>
                     setDosage(
@@ -507,7 +506,7 @@ export default function Home() {
                 <input
                   type="number"
                   placeholder="Quantity"
-                  className="border border-slate-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                 className="border-2 border-slate-300 p-3 rounded-xl outline-none bg-slate-50 text-slate-800 focus:border-blue-500 focus:bg-white transition-all"
                   value={quantity}
                   onChange={(e) =>
                     setQuantity(
@@ -519,7 +518,7 @@ export default function Home() {
                 <input
                   type="text"
                   placeholder="Instructions"
-                  className="border border-slate-300 p-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="border border-slate-300 p-3 rounded-xl outline-none bg-white text-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-400 md:col-span-2"
                   value={instructions}
                   onChange={(e) =>
                     setInstructions(
@@ -530,8 +529,8 @@ export default function Home() {
 
                 <textarea
                   placeholder="Notes"
-                  className="border border-slate-300 p-3 rounded-xl md:col-span-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                  rows={4}
+                  rows={5}
+                  className="border border-slate-300 p-3 rounded-xl outline-none bg-white text-slate-700 placeholder:text-slate-400 focus:ring-2 focus:ring-blue-400 md:col-span-2"
                   value={notes}
                   onChange={(e) =>
                     setNotes(
@@ -545,7 +544,7 @@ export default function Home() {
                 onClick={
                   createPrescription
                 }
-                className="mt-6 bg-blue-600 hover:bg-blue-700 transition-all text-white px-6 py-3 rounded-xl text-lg font-semibold shadow-md"
+                className="mt-6 bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl text-lg font-semibold shadow-md"
               >
                 Create Prescription
               </button>
@@ -554,7 +553,7 @@ export default function Home() {
 
           {/* PRESCRIPTIONS */}
           <div>
-            <h2 className="text-4xl font-bold mb-6 text-slate-800">
+            <h2 className="text-5xl font-bold text-slate-800 mb-8">
               Prescriptions
             </h2>
 
@@ -565,9 +564,9 @@ export default function Home() {
                     key={
                       prescription.id
                     }
-                    className="bg-white rounded-2xl shadow-lg p-6 border border-slate-200"
+                    className="bg-white rounded-3xl p-6 shadow-lg border border-slate-200"
                   >
-                    <div className="flex items-center justify-between mb-6">
+                    <div className="flex justify-between items-center mb-5">
                       <h3 className="text-2xl font-bold text-slate-800">
                         {
                           prescription.code
@@ -575,7 +574,7 @@ export default function Home() {
                       </h3>
 
                       <span
-                        className={`px-4 py-2 rounded-full text-white text-sm font-semibold shadow-sm ${
+                        className={`px-4 py-2 rounded-full text-white text-sm font-semibold ${
                           prescription.status ===
                           'pending'
                             ? 'bg-yellow-500'
@@ -588,7 +587,7 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <div className="space-y-2 text-base text-slate-700">
+                    <div className="space-y-2 text-slate-700">
                       <p>
                         <strong>
                           Patient:
@@ -625,7 +624,7 @@ export default function Home() {
                       <div className="flex items-center gap-2 mb-4">
                         <Pill className="text-blue-600" />
 
-                        <h4 className="text-lg font-semibold text-slate-800">
+                        <h4 className="text-xl font-semibold text-slate-800">
                           Medicines
                         </h4>
                       </div>
@@ -638,28 +637,28 @@ export default function Home() {
                           ) => (
                             <div
                               key={index}
-                              className="bg-slate-50 border border-slate-200 p-4 rounded-xl"
+                              className="bg-slate-50 border border-slate-200 rounded-2xl p-4"
                             >
-                              <p className="text-lg font-semibold text-slate-800">
+                              <p className="font-bold text-slate-800">
                                 {
                                   medicine.name
                                 }
                               </p>
 
-                              <p className="text-sm text-slate-600">
+                              <p className="text-slate-600">
                                 {
                                   medicine.dosage
                                 }
                               </p>
 
-                              <p className="text-sm text-slate-600">
-                                Qty:{' '}
+                              <p className="text-slate-600">
+                                Quantity:{' '}
                                 {
                                   medicine.quantity
                                 }
                               </p>
 
-                              <p className="text-sm text-slate-600">
+                              <p className="text-slate-600">
                                 {
                                   medicine.instructions
                                 }
@@ -680,7 +679,7 @@ export default function Home() {
                               prescription.id,
                             )
                           }
-                          className="mt-6 w-full bg-green-600 hover:bg-green-700 transition-all text-white p-3 rounded-xl text-lg font-semibold"
+                          className="w-full mt-6 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-semibold"
                         >
                           Mark as Consumed
                         </button>
